@@ -1,0 +1,59 @@
+body{
+    background-color:#fee622;
+   
+}
+@mixin for-size($size) {
+    @if $size == phone-only {
+      @media (max-width: 599px) { @content; }
+    } @else if $size == tablet-portrait-up {
+      @media (min-width: 600px) { @content; }
+    } @else if $size == tablet-landscape-up {
+      @media (min-width: 900px) { @content; }
+    } @else if $size == desktop-up {
+      @media (min-width: 1200px) { @content; }
+    } @else if $size == big-desktop-up {
+      @media (min-width: 1800px) { @content; }
+    }
+}
+
+.App{
+    display: flex;
+    justify-content: center;
+
+    @media (min-width: 620px) {
+        .container-sm, .container {
+          max-width: 540px;
+        }
+    }
+    @media (min-width: 828px) {
+        .container-md, .container-sm, .container {
+          max-width: 720px;
+        }
+    }
+    @media (min-width: 1024px) {
+        .container-lg, .container-md, .container-sm, .container {
+          max-width: 960px;
+        }
+    }
+     @media (min-width: 1200px) {
+        .container-xl, .container-lg, .container-md, .container-sm, .container {
+          max-width: 1200px;
+        }
+    }
+    .title-img{
+        height: 186px;
+        width: 521px;
+        @include for-size(phone-only) {
+            height: 97px;
+            width: 264px;
+        }
+    }
+    .Card{
+        background-color: #fff;
+        border-radius: 5px;
+        width: 230px;
+        height: 270px;
+        box-shadow: 0 4px 10px rgb(0 0 0 / 25%);
+    }
+
+}
