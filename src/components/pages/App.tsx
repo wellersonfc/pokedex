@@ -10,6 +10,9 @@ function App() {
         <img src={logo} className="title-img"></img>
         <div className='slider'>
           <Card/>
+          <Card/>
+          <Card/>
+          <Card/>
         </div>
       </div>
     </div>
