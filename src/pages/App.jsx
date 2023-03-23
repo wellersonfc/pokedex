@@ -1,6 +1,5 @@
 import React from 'react';
 import "./style.scss";
-import logo from  "./Pokédex_3D_logo.png";
 import Navbar from '../components/Navebar';
 import PokemonCard from '../components/PokemonCard';
 import { Container } from '@mui/system';
@@ -25,12 +24,28 @@ function App() {
 
     console.log(endpoints);
     var response = axios.all(endpoints.map((endpoint) => axios.get(endpoint)))
-    .then((resp) => console.log(resp))
+    .then((resp) => setPokemons(resp))
+  }
+
+  const pokemonFilter = (name) => {
+    var filterPokemons = [];
+
+    if(name==""){
+      getPokemons();
+    }
+    
+    for (var i in pokemons){
+      if(pokemons[i].data.name.includes(name)){
+        filterPokemons.push(pokemons[i]);
+      }
+    }
+
+    setPokemons(filterPokemons);
   }
 
   return (
     <div>
-      <Navbar />
+      <Navbar  pokemonFilter={pokemonFilter} />
       <Container maxWidth="xl">
         <Grid container>
           {pokemons.map((pokemon, key) =>(

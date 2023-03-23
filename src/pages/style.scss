@@ -1,5 +1,5 @@
 body{
-    background-color:#fee622;
+    background-color:#fff;
    
 }
 @mixin for-size($size) {
@@ -14,6 +14,77 @@ body{
     } @else if $size == big-desktop-up {
       @media (min-width: 1800px) { @content; }
     }
+}
+
+.color-type{
+  &-grass{
+    background-color: #83de7b !important;
+    color: #fff !important;
+  }
+  &-poison{
+    background-color: #917bde !important;
+    color: #fff !important;
+  }
+  &-fire{
+    background-color: #d67c33 !important;
+    color: #fff !important;
+  }
+  &-flying{
+    background-color: #b8dde9a8 !important;
+    color: #fff !important;
+  }
+  &-water{
+    background-color: #2a79e0 !important;
+    color: #fff !important;
+  }
+  &-bug{
+    background-color: #99a039 !important;
+    color: #fff !important;
+  }
+  &-normal{
+    background-color: #9c7c35 !important;
+    color: #fff !important;
+  }
+  &-electric{
+    background-color: #f7e70a !important;
+    color: #fff !important;
+  }
+  &-ground{
+    background-color: #5e5c44 !important;
+    color: #fff !important;
+  }
+  &-fairy{
+    background-color: #e44adc !important;
+    color: #fff !important;
+  }
+  &-fighting{
+    background-color: #cc2129 !important;
+    color: #fff !important;
+  }
+  &-psychic{
+    background-color: #a70e41 !important;
+    color: #fff !important;
+  }
+  &-rock{
+    background-color: #2e2125 !important;
+    color: #fff !important;
+  }
+  &-steel{
+    background-color: #6b6b6b !important;
+    color: #fff !important;
+  }
+  &-ice{
+    background-color: #7ac1c4 !important;
+    color: #fff !important;
+  }
+  &-ghost{
+    background-color: #2f1d72 !important;
+    color: #fff !important;
+  }
+  &-dragon{
+    background-color: #8353af !important;
+    color: #fff !important;
+  }
 }
 
 .App{
@@ -48,12 +119,5 @@ body{
             width: 264px;
         }
     }
-    .Card{
-        background-color: #fff;
-        border-radius: 5px;
-        width: 230px;
-        height: 270px;
-        box-shadow: 0 4px 10px rgb(0 0 0 / 25%);
-    }
-
 }
+
